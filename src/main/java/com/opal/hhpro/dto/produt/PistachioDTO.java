@@ -1,8 +1,6 @@
 package com.opal.hhpro.dto.produt;
 
 
-import com.opal.hhpro.dto.enums.PistachioType;
-
 public class PistachioDTO extends ProductDTO {
     private String type;
     private String origin;
