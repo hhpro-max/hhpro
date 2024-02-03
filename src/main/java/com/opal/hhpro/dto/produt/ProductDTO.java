@@ -2,6 +2,7 @@ package com.opal.hhpro.dto.produt;
 
 
 import com.opal.hhpro.dto.CategoryDTO;
+import com.opal.hhpro.dto.user.SellerDTO;
 import com.opal.hhpro.dto.user.UserDTO;
 
 public class ProductDTO {
@@ -12,7 +13,8 @@ public class ProductDTO {
     private double price;
 
     private CategoryDTO category;
-    private UserDTO user;
+    private SellerDTO seller;
+
 
     public Long getId() {
         return id;
@@ -62,11 +64,11 @@ public class ProductDTO {
         this.category = category;
     }
 
-    public UserDTO getUser() {
-        return user;
+    public SellerDTO getSeller() {
+        return seller;
     }
 
-    public void setUser(UserDTO user) {
-        this.user = user;
+    public void setSeller(SellerDTO user) {
+        this.seller = user;
     }
 }

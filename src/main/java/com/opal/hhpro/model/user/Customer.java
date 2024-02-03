@@ -10,4 +10,12 @@ import java.util.List;
 public class Customer extends User{
     @OneToMany
     private List<Product> cart;
+
+    public List<Product> getCart() {
+        return cart;
+    }
+
+    public void setCart(List<Product> cart) {
+        this.cart = cart;
+    }
 }
