@@ -1,6 +1,6 @@
 package com.opal.hhpro.model;
 
-import com.opal.hhpro.model.user.User;
+import com.opal.hhpro.model.user.Seller;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -15,7 +15,7 @@ public class Company {
     private String phoneNumber;
     private String address;
     @OneToMany
-    private List<User> users;
+    private List<Seller> sellers;
 
     public Long getId() {
         return id;
@@ -49,11 +49,11 @@ public class Company {
         this.address = address;
     }
 
-    public List<User> getUsers() {
-        return users;
+    public List<Seller> getSellers() {
+        return sellers;
     }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
+    public void setSellers(List<Seller> users) {
+        this.sellers = users;
     }
 }
