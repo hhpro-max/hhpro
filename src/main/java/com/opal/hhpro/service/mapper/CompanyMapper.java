@@ -10,34 +10,56 @@ import java.util.stream.Collectors;
 
 public class CompanyMapper {
     public static CompanyDTO mapToDTO(Company company) {
-        CompanyDTO companyDTO = new CompanyDTO();
-        companyDTO.setId(company.getId());
-        companyDTO.setName(company.getName());
-        companyDTO.setAddress(company.getAddress());
-        companyDTO.setPhoneNumber(company.getPhoneNumber());
-        companyDTO.setSellers(CompanyMapper.mapToDTOList(company.getSellers()));
-        return companyDTO;
+        try
+        {
+            CompanyDTO companyDTO = new CompanyDTO();
+            companyDTO.setId(company.getId());
+            companyDTO.setName(company.getName());
+            companyDTO.setAddress(company.getAddress());
+            companyDTO.setPhoneNumber(company.getPhoneNumber());
+            companyDTO.setSellers(CompanyMapper.mapToDTOList(company.getSellers()));
+            return companyDTO;
+        }catch (Exception e)
+        {
+            return null;
+        }
     }
 
     private static List<SellerDTO> mapToDTOList(List<Seller> sellers) {
-        return sellers.stream()
-                .map(SellerMapper::mapToDTO)
-                .collect(Collectors.toList());
+        try {
+            return sellers.stream()
+                    .map(SellerMapper::mapToDTO)
+                    .collect(Collectors.toList());
+        }catch (Exception e)
+        {
+            return null;
+        }
     }
 
     public static Company mapToEntity(CompanyDTO companyDTO) {
-        Company company = new Company();
-        company.setSellers(CompanyMapper.mapToEntityList(companyDTO.getSellers()));
-        company.setAddress(companyDTO.getAddress());
-        company.setId(companyDTO.getId());
-        company.setPhoneNumber(companyDTO.getPhoneNumber());
-        company.setName(companyDTO.getName());
-        return company;
+        try {
+            Company company = new Company();
+            company.setSellers(CompanyMapper.mapToEntityList(companyDTO.getSellers()));
+            company.setAddress(companyDTO.getAddress());
+            company.setId(companyDTO.getId());
+            company.setPhoneNumber(companyDTO.getPhoneNumber());
+            company.setName(companyDTO.getName());
+            return company;
+        }
+        catch (Exception e)
+        {
+            return null;
+        }
     }
 
     private static List<Seller> mapToEntityList(List<SellerDTO> sellers) {
-        return sellers.stream()
-                .map(SellerMapper::mapToEntity)
-                .collect(Collectors.toList());
+        try {
+            return sellers.stream()
+                    .map(SellerMapper::mapToEntity)
+                    .collect(Collectors.toList());
+        }catch (Exception e)
+        {
+            return null;
+        }
     }
 }
