@@ -20,7 +20,10 @@ public class DataLoader implements CommandLineRunner {
         category.setName("nut");
         categoryRepository.save(category);
         Seller seller = new Seller();
-        seller.setFullName("hossein");
+
+
+        seller.setUsername("admin");
+        seller.setPassword("admin");
         sellerRepository.save(seller);
     }
     //todo get ride of this mapping and make it work thanks xd
